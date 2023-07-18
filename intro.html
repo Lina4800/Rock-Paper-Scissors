@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="first.css">
+    <link href="https://fonts.googleapis.com/css2?family=Modak&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <script src="confetti.js"></script>
+    <title>ROCK PAPER SCISSORS</title>
+ 
+</head>
+<div class="rect"></div>
+<body>
+    
+    <div class="main">
+        <div id="win" class="result">YOU WIN!</div>
+        <div id="lost" class="result" style="color:#F67052;">YOU LOST!</div>
+        
+        <img id= "handshake" src="handshake.png" />
+        <div class="title title-text">
+            <span class="title-words">You</span>
+            <span style="font-size: 110px;">vs</span>
+            <span class="title-words">Computer</span>
+        </div>
+        <div class="playground">
+            <div class="player">
+                <img class="playerhand" id="playerRock" src="rock.png" ></img>
+                <img class="playerhand" id="playerPaper" src="paper.png" ></img>
+                <img class="playerhand" id="playerScissors" src="scissors.png">
+ 
+
+
+                <div class="button-container">
+                    <button class="button" id="rock-btn">Rock</button>
+                    <button class="button" id="paper-btn">Paper</button>
+                    <button class="button" id="scissors-btn">Scissors</button>
+                </div>
+            </div>
+            <div class="computer">
+                <img class="computerRock" src="rock.png" ></img>
+                <img class="computerPaper" src="paper.png" ></img>
+                <img class="computerScissors" src="scissors.png">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

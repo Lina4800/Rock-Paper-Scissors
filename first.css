@@ -1,0 +1,266 @@
+body{
+    background: #07075C; 
+}
+
+.rect{
+    width: 50%;
+    height:100%;  
+    background-color: #4D4DA2 ;
+    z-index: -1;
+    position: absolute;
+
+}
+
+.main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-words {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.title-text {  
+    word-spacing: 3em;
+    color: white; 
+    text-align: center;
+    font-size: 4.4rem; 
+    font-family: Modak; 
+    font-weight: 400; 
+    word-wrap: break-word;
+    animation: scale-up 0.65s ;
+}
+
+.playground {
+    flex-grow: 1;
+    flex-basis: 0;
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+
+.player {
+    display: relative;
+}
+
+.playground > div {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+
+#handshake{
+    width: 879px; 
+    height: 480px;  
+    position: absolute; 
+    transform-origin: 0 0;
+    top: 180px;
+    left: 180px;
+    opacity: 1;
+    z-index: 1;
+    animation: fade-out 0.15s linear forwards 1.7s, scale-up 0.65s, scale-down 0.65s 1.5s ;
+}
+
+
+@keyframes scale-up {
+    0% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes scale-down {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0.9);
+    }
+  }
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes buttons-entrance {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+  /* the buttons----------------------------------------------*/
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Aligns flexbox to the bottom */
+    justify-content: flex-start; 
+    position: absolute;
+    top: 500px;
+    left: 100px;
+
+  }
+
+
+  .button{
+    z-index: 2;
+    width: 200px;
+    align-self: center;
+    background-color: #fff;
+    background-image: none;
+    background-position: 0 90%;
+    background-repeat: repeat no-repeat;
+    background-size: 4px 3px;
+    border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+    box-sizing: border-box;
+    color: #4D4DA2;
+    cursor: pointer;
+    margin-bottom: 18px;
+    display: inline-block;
+    font-family: Modak;
+    font-size: 23px;
+    line-height: 23px;
+    outline: none;
+    padding: .75rem;
+    text-decoration: none;
+    transition: all 235ms ease-in-out;
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    animation: buttons-entrance 0.3s linear forwards 1.8s, scale-up 0.65s ;
+    opacity: 0;
+  }
+  
+  .button:hover {
+    box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+    transform: translate3d(0, 2px, 0);
+  }
+  
+  .button:focus {
+    box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+  }
+
+
+/*img for player-------------------------------------------------*/
+#playerRock{
+    width: 400.47px; 
+    height: 300.58px; 
+    animation: glide-in-player 0.6s ;
+    display: none;
+}
+
+#playerPaper{
+    width: 570.09px; 
+    height: 277.24px;
+    animation: glide-in-player 0.9s ;
+    display: none;
+}
+
+#playerScissors{
+    margin-left: 20px;
+    width: 597.53px; 
+    height: 358.47px; 
+    animation: glide-in-player 0.9s ;
+    display: none;
+}
+
+/*img for computer-------------------------------------------------*/
+.computerRock{
+    transform: scalex(-1);
+    width: 400.47px; 
+    height: 300.58px; 
+    animation: glide-in-computer 0.6s ;
+    display: none;
+}
+
+.computerPaper{
+    transform: scalex(-1);
+    width: 570.09px; 
+    height: 277.24px;
+    animation: glide-in-computer 0.9s ;
+    display: none;
+}
+
+.computerScissors{
+    transform: scalex(-1);
+    margin-left: 20px;
+    width: 597.53px; 
+    height: 358.47px; 
+    animation: glide-in-computer 0.9s ;
+    display: none;
+}
+
+@keyframes glide-in-player{
+    0%{
+        rotate: -55grad;
+    }
+    100%{
+        rotate: 0grad;
+    }
+}
+
+@keyframes glide-in-computer{
+    0%{
+        rotate: 55grad;
+    }
+    100%{
+        rotate: 0grad;
+    }
+}
+
+
+/*winner banner --------------------------------------------------------------*/
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    display: none;
+  }
+
+.result{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #F6D252; 
+    text-align: center;
+    font-size: 8rem; 
+    font-family: Modak; 
+    font-weight: 400; 
+    word-wrap: break-word;
+    animation: scale-up 0.65s ;
+    display: none;
+}
+

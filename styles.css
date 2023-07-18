@@ -1,0 +1,134 @@
+
+body{
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#scissors{
+  width: 607.53px; 
+  height: 358.47px; 
+  left: 685.87px; 
+  top: 970.68px; 
+  position: fixed; 
+  transform-origin: 0 0;
+}
+
+#paper{
+  width: 570.09px; 
+  height: 277.24px; 
+  left: 1400.59px;
+  top: 220px; 
+  position: fixed; 
+  transform-origin: 0 0;
+}
+
+#rock{
+  width: 401.47px; 
+  height: 292.58px; 
+  left: -159px; 
+  top: 329.37px; 
+  position: fixed; 
+  transform-origin: 0 0;
+
+
+}
+
+#heading{
+  left: 110px;
+  top: 65px; 
+  position: absolute; 
+  color: #ffffff; 
+  font-size: 100px; 
+  font-family: Modak; 
+  font-weight: 200; 
+  
+}
+
+
+
+img{
+  transition: transform 1.5s ease-out;
+  transform: translateY(-100%);
+  transform: rotate(var(--rotate-angle));
+  animation: vibration 2s infinite, slide-in 1s forwards;
+}
+
+
+.img.vibration {
+  transform: translateY(0);
+}
+
+@keyframes vibration {
+  0% {
+    transform: rotate(var(--rotate-angle)) translateY(0);
+  }
+  25% {
+    transform: rotate(var(--rotate-angle)) translateY(20px);
+  }
+  75% {
+    transform: rotate(var(--rotate-angle)) translateY(-20px);
+  }
+  100% {
+    transform: rotate(var(--rotate-angle)) translateY(0);
+  }
+}
+
+
+/*----------------------water button----------------------------*/
+.button {
+  font-size: 17px;
+  position: absolute;
+  top: 300px;
+  left: 550px;
+  justify-content: center;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 3rem;
+  border-radius: 1.5rem;
+  background: #D9D9D9;
+  background-size: 400%;
+  color: #000055;
+  border: none;
+
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button-content {
+  position: relative;
+  z-index: 1;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    rgba(126, 126, 211, 1) 10.8%,
+    rgba(166, 166, 250, 1) 94.3%
+  );
+  transition: all 0.475s;
+}
+
+a{
+  top: 10px;
+}
